@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+
+/* CONFIGURAÇÕES GERAIS */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body, html{
+    max-width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    height: 100vh;
+    width: 100vw;
+    scroll-behavior: smooth;
+}
+
+h2 {font-size: 54px; color: white;}
+
+p{
+    font-size: 28px;
+    color: #dfe3ee;
+    line-height: 1.5;
+    margin: 10px 0 30px 0;
+    max-width: 600px;
+}
+
+.waves{
+    margin-top: 120px;
+    height: 110px;
+    width: 100%;
+    background-image: url('../img/wave.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.areia{
+    z-index: 999;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-image: url('../img/areia.svg');
+    background-size: cover;
+    background-position: bottom center;
+}
+
+::-webkit-scrollbar {width: 20px; background: #3b5998;}
+
+::-webkit-scrollbar-thumb{
+    border: 5px solid #3b5998;
+    background: #fff;
+    border-radius: 10px;
+}
+
+/* -----------------INICIO CONTAINER------------------- */
+
+.container{
+    transition: all 0.2s ease;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* ---- INICIO SIDEBAR ----- */
+.sidebar{
+    transition: all 0.6s ease-in-out;
+    left: -60vw;
+    padding-top: 15px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    min-height: 100vh;
+    height: 100vh;
+    width: 60vw;
+    background: #3b5998;;
+    align-self: flex-start;
+    border-top-right-radius: 20px;
+    z-index: 9999;
+    box-shadow: rgba(0, 0, 0, 0.349) 0px 4px 12px;
+}
+
+.sidebar .sidebar-redes{
+    display: flex;
+    height: 70px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sidebar-redes a {height: 32px; width: 40px;}
+
+.sidebar-redes svg {height: 100%; fill: white;}
+
+.sidebar .sidebar-nav{
+    width: 100%;
+    list-style: none;
+    font-size: 20px;
+}
+
+.sidebar .sidebar-nav li{
+    width: 100%;
+    border-bottom: 1px solid whitesmoke;
+    padding: 25px 0;
+}
+
+.sidebar .sidebar-nav a {color: white;}
+/* ----- FIM SIDEBAR ----- */
+
+/* ----INICIO HEADER---- */
+header{
+    float: left;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 999;
+    background: white;
+    box-shadow: none;
+    transition: all 0.5s ease-out;
+}
+
+/* inicio navbar */
+header nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 22px;
+}
+
+header nav ul li, header nav ul li a{
+    color: #3b5998;
+    transition: all 0.2s ease-in;
+}
+
+header nav ul li:hover, header nav li a:hover{
+    transform: translateY(-3px);
+    color: #8b9dc3;
+}
+
+header .icones-redes-sociais ul{
+    display: flex;
+    height: 35px;
+    width: max-content;
+    gap: 25px;
+}
+
+header .icones-redes-sociais a svg {
+    transition: all 0.5s ease; 
+    height: 100%; 
+    width: 100%;
+}
+
+header .icones-redes-sociais a svg:hover {cursor: pointer;}
+
+header .icones-redes-sociais a svg:nth-child(1):hover {fill: #3b5998;}
+
+header .icones-redes-sociais a svg:nth-child(2):hover {fill: rgb(214, 169, 176);}
+
+header .icones-redes-sociais a svg:nth-child(3):hover {fill: rgb(0, 124, 124)}
+
+header .menu{
+    display: none;
+    width: 33px;
+    height: 30px;
+    background: none;
+    border: none;
+    transition: 0.6s;
+}
+
+header .menu #check{
+    width: 33px;
+    height: 30px;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 99999999999;
+}
+
+.menu .barras{
+    width: 100%;
+    height: 4px;
+    margin: 6px 0;
+    background: #3b5998;
+    border-radius: 20px;
+}
+
+/* fim navbar */
+
+.logo {height: 90px;}
+
+/* -----FIM HEADER----- */
+
+main {width: 100%; background: #3b5998;}
+
+/* ----INICIO SOFTWARE---- */
+#apresentacao, #manual{
+    margin-top: -20px;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    padding-bottom: 50px;
+}
+
+/* -texto de apresentação- */
+
+.texto {width: 600px;}
+
+.texto h2 {margin-left: -15px;}
+
+.texto button{
+    margin-left: 5%;
+    height: 120px;
+    width: 360px;
+    padding: 10px;
+    border: 3px solid #fff;
+    border-radius: 15px;
+    font-size: 22px;
+    background: #fff;
+    line-height: 1.4;
+    transition: 0.4s all ease-in-out;
+    color: #3b5998;
+}
+
+.texto a{
+    color: grey;
+}
+
+.texto a:hover{
+    text-decoration: underline;
+}
+
+.texto button:hover{
+    border: 3px solid #fff;
+    background-color: #3b5998;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* fim texto de apresentação */
+
+.img-aquario {height: 450px; width: 450px;}
+
+/* ------FIM SOFTWARE------ */
+
+/* ------INICIO SENSORES------ */
+
+#sensores{
+    margin: 50px 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#sensores .bloco{
+    width: 300px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+#sensores .bloco:nth-child(2){
+    box-sizing: content-box;
+    padding: 0 6vw;
+    border-left: 1px solid #8b9dc3;
+    border-right: 1px solid #8b9dc3;
+}
+
+#sensores .bloco img{
+    object-fit: cover;
+    width: 260px;
+    height: 260px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#sensores .bloco div {margin-top: 15px;}
+
+#sensores .texto-principal-sensores {display: none;}
+
+#sensores h3 {font-size: 34px; color: white;}
+
+#sensores p {font-size: 18px; color: #dfe3ee}
+
+/* inicio carrossel */
+#sensores .carrossel{
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.39) 1.95px 1.95px 3px;
+    display: none;
+}
+
+#sensores #painel {display: flex;}
+
+#sensores #painel img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+/* fim carrossel */
+
+/* ----FIM SENSORES---- */
+
+
+/* ----INICIO SOBRE---- */
+
+#sobre{
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+#sobre div{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: justify;
+    justify-content:space-between;
+}
+
+#sobre p {line-height: 1.5;}
+
+#sobre a {color: #dfe3ee;}
+
+#sobre a:hover {text-decoration: underline;}
+
+#sobre img {height: 560px;}
+/* ----FIM SOBRE------ */
+
+.suporte #faq ul{
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.suporte #faq li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+    list-style: none;
+    transition: 0.2s all ease;
+}
+
+ .suporte #faq li:hover{
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.suporte .pergunta{
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color:rgb(221, 221, 221);
+    width: 100%;
+    padding: 20px 15px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    z-index: 99;
+    float: left;
+}
+
+#faq svg{
+    height: 30px;
+    width: 30px;
+    border: none;
+}
+
+.suporte .descricao{
+    font-size: 20px;
+    max-width: 69vw;
+    background-color:rgb(235, 235, 235);
+    max-height: 0px;
+    width: 90vw;
+    overflow: hidden;
+    transition: 0.6s max-height ease-out;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#faq{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 250px;
+}
+ 
+
+/* ------------------FIM CONTAINER------------------*/
+
+/* ----INICIO FOOTER---- */
+footer{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding: 15px 0;
+    background-color: white;
+}
+/* ----FIM FOOTER---- */
+
+/* ---- MEDIA QUERIES ----*/
+@media screen and (max-width: 1366px){  
+
+    /* apresentacao */
+
+    #apresentacao h2, #manual h2, #sobre h2 {font-size: 46px;}
+
+    #apresentacao p, #manual p, #sobre p {font-size: 24px; max-width: 500px;}
+    
+    #apresentacao button {width: 300px; height: 100px;}
+
+    #apresentacao img, #manual img {height: 370px; width: 370px;}
+
+    /* sensores */
+    
+    #sensores .bloco:nth-child(2) {padding: 0 1vw;}
+
+    #sensores .bloco img{
+        object-fit: cover;
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    #sensores h3 {font-size: 30px;}
+
+    #sensores p{
+        margin: 0;
+        font-size: 18px;
+        height: 130px;
+    }
+
+    #sensores .carrossel {width: 350px; height: 350px;}
+
+    /* sobre */
+
+    #sobre {padding-top: 60px;}
+
+    #sobre img{
+        width: 450px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    /* apresentacao */
+    
+    #apresentacao, #manual {justify-content: space-evenly;}
+    
+    #apresentacao .texto, #manual .texto {width: 500px;}
+    
+    #apresentacao h2, #manual h2, #sobre h2 {font-size: 38px;}
+    
+    #apresentacao p, #manual p, #sobre p{
+        font-size: 20px;
+        max-width: 400px;
+    }
+    
+    #apresentacao p, #manual p {margin: 15px 0;}
+    
+    #apresentacao button, #manual button{
+        width: 300px;
+        height: 90px;
+        font-size: 20px;
+    }
+    
+    #apresentacao img, #manual img {height: 300px; width: 300px;}
+    
+    /* sensores */
+    
+    #sensores {margin: 0;}
+
+    #sensores h3 {font-size: 32px;}
+    
+    #sensores p {font-size: 20px; height: 130px;}
+    
+    /* sobre */
+    
+    #sobre {padding-top: 40px;}
+
+    #sobre img{
+        width: 360px;
+        height: 360px;
+    }
+
+    #sobre a {text-decoration: underline;}
+}
+
+@media screen and (max-width: 901px) {
+    * {text-align: center;}
+    
+    #apresentacao img, #manual img, #sobre img {display: none;}
+    
+    #apresentacao h2, #manual h2, #sobre h2 {font-size: 320%;}
+
+    #apresentacao p, #manual p, #sobre p {font-size: 180%; max-width: unset; margin: 20px 0;}
+    
+    #apresentacao button, #manual button{
+        width: 40vw;
+        height: 10vh;
+        font-size: 120%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    /*---------*/
+
+    #sensores{
+        height: 100vh;
+        justify-content: space-evenly;
+        gap: 60px;
+        flex-direction: column;
+    }
+
+    #sensores .bloco {display: none; text-align: center;}
+
+    #sensores h3 {font-size: 320%;}
+
+    #sensores p{
+        text-align: center;
+        font-size: 165%;
+        line-height: 1.2;
+        width: 600px;
+    }
+
+    #sensores .carrossel {width: 35vw; height: 35vw;}
+
+    #sobre {height: 70vh; justify-content: center;}
+}
+
+@media screen and (max-width: 561px) {
+    
+    .waves{margin-top: 70px;}
+    
+    header{
+        justify-content: space-around;
+        padding: 0 10px;
+    }
+
+    header .logo {height: 60px;}
+    
+    header nav {display: none;}
+
+    header .icones-redes-sociais ul {display: none;}
+
+    header .menu {display: block;}
+    
+    #apresentacao, #manual {margin: 0;}
+
+    #apresentacao h2, #manual h2, #sobre h2, #faq h2 {font-size: 30px;}
+
+    #apresentacao p, #manual p {font-size: 20px;}
+
+    #apresentacao p, #manual p{
+        margin: 15px auto;
+        max-width: 300px;
+        height: auto;
+    }
+
+    #apresentacao button, #manual button{
+        width: 200px;
+        height: 90px;
+        font-size: 16px;
+    }
+
+    #sensores {gap: 0;}
+
+    #sensores h3 {font-size: 28px;}
+
+    #sensores p {font-size: 18px; width: 340px;}
+
+    #sobre {justify-content: space-around;}
+
+    #sobre p {font-size: 18px;}
+
+    #faq .pergunta{
+        font-size: 24px;
+    }
+}
